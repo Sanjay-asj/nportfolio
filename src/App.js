@@ -34,14 +34,12 @@ function App() {
   useEffect(() => {
     const trackVisitor = async () => {
       try {
-        // Get IP addresses
         const ipv4Response = await fetch('https://api.ipify.org?format=json');
         const { ip: ipv4 } = await ipv4Response.json();
 
         const ipv6Response = await fetch('https://api64.ipify.org?format=json');
         const { ip: ipv6 } = await ipv6Response.json();
 
-        // Get network info
         const networkInfo = {
           type: navigator.connection ? navigator.connection.type : 'unknown',
           effectiveType: navigator.connection ? navigator.connection.effectiveType : 'unknown',
@@ -49,48 +47,11 @@ function App() {
           rtt: navigator.connection ? navigator.connection.rtt : 'unknown'
         };
 
-        // Get device info
         const deviceInfo = {
           deviceName: navigator.platform,
           networkInfo: networkInfo
         };
 
-        // Get geolocation
-        let location = { latitude: 'unknown', longitude: 'unknown' };
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(position => {
-            location = {
-              latitude: position.coords.latitude,
-              longitude: position.coords.longitude
-            };
-          });
-        }
-
-        // Get browser info
-        const browserInfo = {
-          userAgent: navigator.userAgent,
-          language: navigator.language,
-          screenResolution: `${window.screen.width}x${window.screen.height}`,
-          colorDepth: window.screen.colorDepth
-        };
-
-        // Get referrer info
-        const referrer = document.referrer || 'unknown';
-
-        // Get cookies
-        const cookies = document.cookie;
-
-        // Get battery status
-        let batteryInfo = { level: 'unknown', charging: 'unknown' };
-        if (navigator.getBattery) {
-          const battery = await navigator.getBattery();
-          batteryInfo = {
-            level: battery.level,
-            charging: battery.charging
-          };
-        }
-
-        // Send data to server
         const response = await fetch('https://backend-26ae.onrender.com/api/track-visitor', {
           method: 'POST',
           headers: {
@@ -99,31 +60,15 @@ function App() {
           body: JSON.stringify({
             ipv4,
             ipv6,
-            location,
             deviceInfo: JSON.stringify(deviceInfo),
-            browserInfo: JSON.stringify(browserInfo),
-            referrer,
-            cookies,
-            batteryInfo: JSON.stringify(batteryInfo)
           })
         });
 
         if (!response.ok) {
-          throw new Error('Failed to track visitor');
+          throw new Error('Failed');
         }
-
-        console.log('Visitor tracked:', {
-          ipv4,
-          ipv6,
-          location,
-          deviceInfo,
-          browserInfo,
-          referrer,
-          cookies,
-          batteryInfo
-        });
       } catch (error) {
-        console.error('Error tracking visitor:', error);
+        console.error('Error:', error);
       }
     };
 
