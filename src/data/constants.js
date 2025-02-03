@@ -12,7 +12,7 @@ export const Bio = {
     "I am a motivated and adaptable individual with a strong drive to embrace new challenges and opportunities. Passionate about continuous learning, I am committed to delivering high-quality results and contributing meaningfully. With a positive attitude and a growth-oriented mindset, I am ready to make a lasting impact and achieve remarkable outcomes. ",
   github: "https://github.com/nadin-c",
   resume:
-    "https://drive.google.com/file/d/1ffZrcMcn8UatXGIaautbbqpV7ADNaETA/view?usp=sharing",
+    "",
   linkedin: "https://www.linkedin.com/in/nadin-c-694568259/",
   twitter: "https://x.com/nadin7775429?t=NiFC6A4NRlle4FuS9fWeJQ&s=09",
   insta: "https://www.instagram.com/",
@@ -201,7 +201,7 @@ export const experiences = [
     "image": "https://your-image-url.com/innoventures_image.jpg",
     "certificate_link": "https://drive.google.com/file/d/18wRM0ipFpAPqMtDA-W33vx-O8vmj2g73/view"
   },
-  
+
   {
     "id": 1,
     "title": "1st Prize in Modern Business Card Paper Presentation",
@@ -366,7 +366,7 @@ export const projects = [
     github: "https://github.com/nadin-c/Expense_Management_System",
     webapp: "https://your-deployed-app-link.com", // Replace with the deployed app link if available
   },
-  
+
   {
     id: 14,
     title: "QR Code Generator",
@@ -385,7 +385,7 @@ export const projects = [
     github: "https://github.com/nadin-c/QrCode_Generator",
     webapp: "https://your-deployed-app-link.com", // Replace with the deployed app link if available
   },
-  
+
   {
     id: 15,
     title: "SAP Point Calculator - Student Portal",
@@ -406,7 +406,7 @@ export const projects = [
     category: "web app",
     github: "https://github.com/nadin-c/SAP-Point-Calculator-Student-Portal",
     webapp: "https://your-deployed-app-link.com", // Replace with the deployed app link if available
-  },  
+  },
 
   {
     id: 16,
@@ -429,7 +429,7 @@ export const projects = [
     github: "https://github.com/nadin-c/Book_Store_Management_System.git",
     webapp: "https://your-deployed-app-link.com", // Replace with the deployed app link if available
   },
-  
+
   {
     id: 17,
     title: "Contact Manager",
@@ -450,7 +450,7 @@ export const projects = [
     category: "web app",
     github: "https://github.com/nadin-c/contact-manager.git",
     webapp: "https://your-deployed-app-link.com", // Replace with the deployed app link if available
-  },  
+  },
 
   //pre defined template by YouTube
   // {
@@ -466,7 +466,7 @@ export const projects = [
   //   github: "https://github.com/rishavchanda/Face-Recodnition-AI-with-Python",
   //   webapp: "https://github.com/rishavchanda/Face-Recodnition-AI-with-Python",
   // },
-  
+
 ];
 
 export const TimeLineData = [
