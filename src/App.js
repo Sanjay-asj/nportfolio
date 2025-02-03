@@ -30,53 +30,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [openModal, setOpenModal] = useState({ state: false, project: null });
   console.log(openModal)
-
-  useEffect(() => {
-    const trackVisitor = async () => {
-      try {
-        const ipv4Response = await fetch('https://api.ipify.org?format=json');
-        const { ip: ipv4 } = await ipv4Response.json();
-
-        const ipv6Response = await fetch('https://api64.ipify.org?format=json');
-        const { ip: ipv6 } = await ipv6Response.json();
-
-        const networkInfo = {
-          type: navigator.connection ? navigator.connection.type : 'unknown',
-          effectiveType: navigator.connection ? navigator.connection.effectiveType : 'unknown',
-          downlink: navigator.connection ? navigator.connection.downlink : 'unknown',
-          rtt: navigator.connection ? navigator.connection.rtt : 'unknown'
-        };
-
-        const deviceInfo = {
-          deviceName: navigator.platform,
-          networkInfo: networkInfo
-        };
-
-        const response = await fetch('https://backend-26ae.onrender.com/api/track-visitor', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            ipv4,
-            ipv6,
-            deviceInfo: JSON.stringify(deviceInfo),
-          })
-        });
-
-        if (!response.ok) {
-          throw new Error('Failed');
-        }
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    };
-
-    trackVisitor();
-  }, []);
-
-
-
+  
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Router >
