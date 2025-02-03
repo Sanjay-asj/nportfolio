@@ -12,7 +12,7 @@ export const Bio = {
     "I am a motivated and adaptable individual with a strong drive to embrace new challenges and opportunities. Passionate about continuous learning, I am committed to delivering high-quality results and contributing meaningfully. With a positive attitude and a growth-oriented mindset, I am ready to make a lasting impact and achieve remarkable outcomes. ",
   github: "https://github.com/nadin-c",
   resume:
-    "",
+    "https://drive.google.com/file/d/13kM50BZzwhVybstzr7V4vZq-PYmH_0u2/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/nadin-c-694568259/",
   twitter: "https://x.com/nadin7775429?t=NiFC6A4NRlle4FuS9fWeJQ&s=09",
   insta: "https://www.instagram.com/",
@@ -271,7 +271,7 @@ export const experiences = [
     "title": "Participation in Techno-Cultural Fest",
     "event": "Ruby Year Celebration - KEC",
     "date": "January 23-24, 2025",
-    "description": "Participated in the Techno-Cultural Fest Ruby Year Celebration under the Software category at Kongu Engineering College.",
+    "description": "Won 4th Price in the Techno-Cultural Fest Ruby Year Celebration under the college level Software category at Kongu Engineering College.",
     "skills": ["Event Participation", "Technical Skills", "Collaboration"],
     "image": "https://drive.google.com/file/d/1neMfE9zdE7IPfJQ6XmuXZcq-3pn3_BfA/view",
     "certificate_link": "https://drive.google.com/file/d/1neMfE9zdE7IPfJQ6XmuXZcq-3pn3_BfA/view"
