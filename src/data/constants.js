@@ -268,7 +268,7 @@ export const experiences = [
 
   {
     "id": 7,
-    "title": "Participation in Techno-Cultural Fest",
+    "title": "Techno-Cultural Fest",
     "event": "Ruby Year Celebration - KEC",
     "date": "January 23-24, 2025",
     "description": "Won 4th Price in the Techno-Cultural Fest Ruby Year Celebration under the college level Software category at Kongu Engineering College.",
