@@ -275,7 +275,19 @@ export const experiences = [
     "skills": ["Event Participation", "Technical Skills", "Collaboration"],
     "image": "https://drive.google.com/file/d/1neMfE9zdE7IPfJQ6XmuXZcq-3pn3_BfA/view",
     "certificate_link": "https://drive.google.com/file/d/1neMfE9zdE7IPfJQ6XmuXZcq-3pn3_BfA/view"
+  }, 
+
+  {
+    "id": 8,
+    "title": "DEKATHON 3.0 Hackathon",
+    "event": "An Indo-Malaysian Hackathon on Sustainable Development Goals",
+    "date": "March 5-7, 2025",
+    "description": "Participated in DEKATHON 3.0: An Indo-Malaysian Hackathon on Sustainable Development Goals organized by St. Thomas College of Engineering & Technology in association with Universiti Teknologi MARA Malaysia, APJ Abdul Kalam Technological University, and Kerala Startup Mission.",
+    "skills": ["Hackathon Participation", "Team Collaboration", "Sustainable Development"],
+    "image": "https://drive.google.com/file/d/1z1XQ4BNeEmDLxYHH3smTYdhpkcVEzx6a/view?usp=drive_link",
+    "certificate_link": "https://drive.google.com/file/d/1z1XQ4BNeEmDLxYHH3smTYdhpkcVEzx6a/view?usp=drive_link"
   }
+  
 
 ];
 
