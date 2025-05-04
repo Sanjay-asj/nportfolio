@@ -3,7 +3,7 @@ import schoolimage from "../images/schoolimage.jpeg";
 export const Bio = {
   name: "Nadin C",
   roles: [
-    "Full Stack Developer",
+    "FrontEnd Developer",
     // "Android Developer",
     // "UI/UX Designer",
     "Programmer",
