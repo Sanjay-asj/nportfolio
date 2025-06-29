@@ -123,8 +123,8 @@ const Skills = () => {
   return (
     <Container id="skills">
       <Wrapper>
-        <Title>Skills</Title>
-        <Desc> Over the past 2 years, I have been honing my skills in various domains, gaining hands-on experience and practical knowledge. Below are the areas I excel in and continue to grow my expertise.
+        <Title>Expertise</Title>
+        <Desc> Driven by curiosity and a passion for learning, I’ve spent the past two years strengthening my skills in communication, problem-solving, and other key areas. I continue to grow and improve every day.
         </Desc>
         <SkillsContainer>
           {skills.map((skill, index) => (

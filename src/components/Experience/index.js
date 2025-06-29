@@ -75,10 +75,8 @@ const Index = () => {
     return (
         <Container id="experience">
             <Wrapper>
-                <Title>Paper and Project Presentation</Title>
-                <Desc>
-                    Below is a showcase of my achievements and the awards I've won in various competitions and events.
-                </Desc>
+                <Title>Paper Presentation and Certifications</Title>
+                
                 <TimelineSection>
                     <Timeline>
                         {experiences.map((experience, index) => (
