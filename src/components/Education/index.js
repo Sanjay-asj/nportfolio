@@ -6,107 +6,157 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import { education } from '../../data/constants'; // Corrected import
+import { education } from '../../data/constants';
 import EducationCard from '../Cards/EducationCard';
+import { motion } from 'framer-motion';
 
-// Styled Components
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    padding: 0px 0px 60px 0px;
-
-    @media (max-width: 960px) {
-        padding: 0px;
-    }
+const Container = styled.section`
+  padding: 6rem 2rem;
+  background: #1E293B; /* Dark Blue */
+  position: relative;
+  overflow: hidden;
 `;
 
 const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1350px;
-    padding: 40px 0 0 0;
-    gap: 12px;
-
-    @media (max-width: 960px) {
-        flex-direction: column;
-    }
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
 `;
 
-const Title = styled.div`
-    font-size: 42px;
-    text-align: center;
-    font-weight: 600;
-    margin-top: 20px;
-    color: ${({ theme }) => theme.text_primary};
-
-    @media (max-width: 768px) {
-        font-size: 32px;
-        margin-top: 12px;
-    }
+const Title = styled(motion.h2)`
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #FFFFFF;
+  text-align: center;
+  background: linear-gradient(90deg, #FFFFFF, #0EA5E9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  
+  @media (max-width: 768px) {
+    font-size: 2.75rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 2.25rem;
+  }
 `;
 
-const Desc = styled.div`
-    font-size: 18px;
-    text-align: center;
-    max-width: 600px;
-    color: ${({ theme }) => theme.text_secondary};
-
-    @media (max-width: 768px) {
-        font-size: 16px;
-        margin-top: 12px;
-    }
+const Desc = styled.p`
+  font-size: 1.25rem;
+  color: #94A3B8;
+  text-align: center;
+  max-width: 700px;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 `;
 
 const TimelineSection = styled.div`
-    width: 100%;
-    max-width: 1000px;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-
-    @media (max-width: 660px) {
-        align-items: flex-start;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 2rem;
+  
+  .MuiTimeline-root {
+    padding: 0;
+  }
+  
+  .MuiTimelineItem-root {
+    &:before {
+      flex: 0;
+      padding: 0;
     }
+  }
+  
+  .MuiTimelineDot-root {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.2);
+    background-color: #0EA5E9; /* Bright Cyan */
+    border: none;
+  }
+  
+  .MuiTimelineConnector-root {
+    background-color: #0EA5E9; /* Bright Cyan */
+    width: 2px;
+  }
 `;
 
-// Component
+const StyledEducationCard = styled(EducationCard)`
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(14, 165, 233, 0.2);
+  }
+`;
+
 const Education = () => {
-    return (
-        <Container id="education">
-            <Wrapper>
-                <Title>Educational Background</Title>
-                <Desc>
-                  My academic journey has shaped my skills and perspective. The details of my education are as follows.  
-                </Desc>
-                <TimelineSection>
-                    <Timeline>
-                        {education.map((edu, index) => (
-                            <TimelineItem key={index}>
-                                <TimelineSeparator>
-                                    <TimelineDot variant="outlined" color="secondary" />
-                                    {index !== education.length - 1 && (
-                                        <TimelineConnector style={{ background: '#854CE6' }} />
-                                    )}
-                                </TimelineSeparator>
-                                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                                    <EducationCard education={edu} />
-                                </TimelineContent>
-                            </TimelineItem>
-                        ))}
-                    </Timeline>
-                </TimelineSection>
-            </Wrapper>
-        </Container>
-    );
+  const cardVariants = {
+    offscreen: {
+      y: 50,
+      opacity: 0
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8
+      }
+    }
+  };
+
+  return (
+    <Container id="education">
+      <Wrapper>
+        <Title
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={cardVariants}
+        >
+          Education
+        </Title>
+        <Desc>
+          My academic journey has equipped me with knowledge and skills that fuel my passion for technology and innovation.
+        </Desc>
+        
+        <TimelineSection>
+          <Timeline>
+            {education.map((edu, index) => (
+              <TimelineItem key={index}>
+                <TimelineSeparator>
+                  <TimelineDot />
+                  {index !== education.length - 1 && <TimelineConnector />}
+                </TimelineSeparator>
+                <TimelineContent sx={{ py: '24px', px: 2 }}>
+                  <motion.div
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true, amount: 0.5 }}
+                    variants={cardVariants}
+                  >
+                    <StyledEducationCard education={edu} />
+                  </motion.div>
+                </TimelineContent>
+              </TimelineItem>
+            ))}
+          </Timeline>
+        </TimelineSection>
+      </Wrapper>
+    </Container>
+  );
 };
 
 export default Education;

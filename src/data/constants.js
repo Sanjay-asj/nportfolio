@@ -2,6 +2,9 @@ import schoolimage from "../images/schoolimage.jpeg";
 import mithun from "../images/mithun.png";
 import restaurant from "../images/restaurant.png";
 import automax from "../images/automax.png";
+import air from "../images/air.jpg";
+import vr from "../images/vr.png"
+
 export const Bio = {
   name: "Sanjay A",
   roles: [
@@ -335,6 +338,37 @@ export const projects = [
     ],
     category: "web app",
     github: "https://github.com/Sanjay-asj/Restaurant-Booking-Website",
+    webapp: "https://your-deployed-app-link.com", // Replace with the deployed app link if available
+  },
+    {
+    id: 13,
+    title: "Air-Quality-Monitor-With-NODE-MCU",
+    date: "December 2024",
+    description:
+      "Built an air quality monitoring system using NODE-MCU with real-time data display.",
+    image:
+      air, // Replace with an appropriate image URL
+    tags: [
+      "Typescript",
+      "CSS",
+    ],
+    category: "web app",
+    github: "https://airqualitymonitor1.netlify.app/",
+    webapp: "https://your-deployed-app-link.com", // Replace with the deployed app link if available
+  },
+      {
+    id: 13,
+    title: "VR Platform",
+    date: "January 2025",
+    description:
+      "Built a VR platform for immersive experiences for CT-UG",
+    image:
+      vr, // Replace with an appropriate image URL
+    tags: [
+      "3D Vista",
+    ],
+    category: "web app",
+    github: "https://Sukanth-R.github.io/ctug-vr",
     webapp: "https://your-deployed-app-link.com", // Replace with the deployed app link if available
   },
 
